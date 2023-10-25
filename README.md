@@ -6,7 +6,7 @@ UserManagementService
     Columns: id, name, email, password, created_at, updated_at
 
     Table: Session
-    Columns: id, user_id, token, created_at, updated_at
+    Columns: id, user_id, token, status ,created_at
 
 ### API
 
