@@ -42,11 +42,8 @@ UserManagementService
     Request Header: {
         "token": "qwertyuiopasdfghjklzxcvbnm"
     }
-    Request Body : {
-        "token": "qwertyuiopasdfghjklzxcvbnm"
-    }
-    Response Body: {
-        "message": "User logged out successfully"
+    Response Header: {
+        "Status": "200 OK"
     }
 
 ### User Profile
