@@ -5,6 +5,8 @@ import com.giriraj.usermanegementservice.dto.CreateUserResponse;
 import jakarta.persistence.Entity;
 import lombok.*;
 
+import java.util.List;
+
 @Getter
 @Setter
 @Entity
@@ -14,6 +16,9 @@ public class Users extends BaseModel{
     private String name;
     private String email;
     private String password;
+//    private UserStatus accountStatus;
+
+
 
     public  CreateUserResponse convertToCreateUserResponse() {
         Users user = this;

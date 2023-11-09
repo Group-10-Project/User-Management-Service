@@ -59,20 +59,25 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    @Transactional
+//    @Transactional
     public String deleteUserById(Long id, String token) throws InvalidTokenException, UserNotFoundException {
         //validate token
-        userAuthenticationService.validateToken(token);
-        if(!getUserIdFromToken(token).equals(id)) {
-            throw new InvalidTokenException("Invalid token");
-        }
-        Optional<Users> user = userRepository.findById(id);
-        if(user.isEmpty()) {
-            throw new UserNotFoundException("User not found with id: "+id);
-        }
-        userRepository.deleteById(id);
+//        userAuthenticationService.validateToken(token);
+//        if(!getUserIdFromToken(token).equals(id)) {
+//            throw new InvalidTokenException("Invalid token");
+//        }
+//        Optional<Users> user = userRepository.findById(id);
+//        if(user.isEmpty()) {
+//            throw new UserNotFoundException("User not found with id: "+id);
+//        }
+//        Optional<Users> u = userRepository.findById(id);
+        deleteUser( id);
         return "User deleted successfully";
 
+    }
+    @Transactional
+    public void deleteUser(Long id) {
+        userRepository.deleteById(id);
     }
 
     @Override
